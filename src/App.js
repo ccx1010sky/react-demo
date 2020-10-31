@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './navbar.js';
 
 import store from './stores'
 import { increment_action } from './actions/counterAction'
@@ -27,7 +28,9 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="App">
+          <Navbar/>
           <h1>Counter: {this.state.counter} </h1>
           <button onClick={ () => store.dispatch(increment_action(10))} >INC</button>
           <button onClick={ () => store.dispatch({ type: 'DECREMENT' })}>DEC</button>
